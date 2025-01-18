@@ -1,1 +1,42 @@
-a : 10
+COLUMNS:
+  id: int64
+  Recipientgender: int64
+  Stemcellsource: int64
+  Donorage: float64
+  Donorage35: int64
+  IIIV: int64
+  Gendermatch: int64
+  DonorABO: int64
+  RecipientABO: object
+  RecipientRh: object
+  ABOmatch: object
+  CMVstatus: object
+  DonorCMV: object
+  RecipientCMV: object
+  Disease: object
+  Riskgroup: int64
+  Txpostrelapse: int64
+  Diseasegroup: int64
+  HLAmatch: int64
+  HLAmismatch: int64
+  Antigen: object
+  Alel: object
+  HLAgrI: int64
+  Recipientage: float64
+  Recipientage10: int64
+  Recipientageint: int64
+  Relapse: int64
+  aGvHDIIIIV: int64
+  extcGvHD: object
+  CD34kgx10d6: float64
+  CD3dCD34: object
+  CD3dkgx10d8: object
+  Rbodymass: object
+  ANCrecovery: int64
+  PLTrecovery: int64
+  time_to_aGvHD_III_IV: int64
+  survival_time: int64
+
+
+TARGET_COLUMN:
+  survival_status: int64
