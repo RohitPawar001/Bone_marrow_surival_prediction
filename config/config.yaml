@@ -12,3 +12,8 @@ data_validation:
   unzip_dir: artifacts\data_ingestion\csv_result-bone-marrow.csv
   STATUS_FILE: artifacts/data_validation/status.txt
   
+
+data_transformation:
+  root_dir : arifacts/data_validation
+  data_path : artifacts/data_ingestion/csv_result-bone-marrow.csv
+  
