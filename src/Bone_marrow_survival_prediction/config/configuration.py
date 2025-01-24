@@ -1,7 +1,7 @@
 
 from Bone_marrow_survival_prediction.constants import *
 from Bone_marrow_survival_prediction.utils.comman import read_yaml, create_directories
-from Bone_marrow_survival_prediction.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig
+from Bone_marrow_survival_prediction.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig
 
 
 
@@ -63,3 +63,25 @@ class ConfigurationManager:
         )
         
         return data_transformation_config
+
+    
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        params = self.params.SupportVectorclassifier
+        schema = self.schema.TARGET_COLUMN
+        
+        create_directories([config.root_dir])
+        
+        model_trainer_config = ModelTrainerConfig(
+            root_dir = config.root_dir,
+            train_data_path = config.train_data_path,
+            test_data_path = config.test_data_path,
+            y_train_path = config.y_train_path,
+            y_test_path = config.y_test_path,
+            c = params.c,
+            kernel = params.kernel,
+            model_name = config.model_name,
+            target_column = schema
+        )
+        
+        return model_trainer_config

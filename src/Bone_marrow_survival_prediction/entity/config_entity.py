@@ -22,3 +22,16 @@ class DataValidationConfig:
 class DataTransformationConfig:
     root_dir : Path
     data_path : Path
+    
+    
+@dataclass(frozen=True)
+class ModelTrainerConfig:
+    root_dir : Path
+    train_data_path: Path
+    y_train_path :Path
+    test_data_path : Path
+    y_test_path : Path
+    c : float
+    kernel : str
+    model_name : str
+    target_column : str

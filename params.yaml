@@ -1,1 +1,3 @@
-b :
+SupportVectorclassifier:
+  c : 1.0
+  kernel : "rbf"
