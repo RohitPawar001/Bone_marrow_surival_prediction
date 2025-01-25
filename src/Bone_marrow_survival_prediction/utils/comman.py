@@ -4,6 +4,7 @@ import yaml
 from Bone_marrow_survival_prediction import logger
 import json
 import joblib
+import mlflow
 from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
@@ -128,3 +129,18 @@ def get_size(path: Path) -> str:
 
 
 
+def setup_dagshub_mlflow_tracking(token):
+    
+    try:
+       
+        dagshub_uri = "https://dagshub.com/rppawar491/Bone_marrow_surival_prediction.mlflow"
+        
+        os.environ['MLFLOW_TRACKING_URI'] = dagshub_uri
+        os.environ['MLFLOW_TRACKING_TOKEN'] = token
+        
+        mlflow.set_tracking_uri(dagshub_uri)
+        
+        logger.info(f"DagsHub MLflow Tracking Configured Successfully")
+    except Exception as e:
+        logger.exception(e)
+        raise e

@@ -25,3 +25,11 @@ model_trainer:
   y_train_path : artifacts/data_transformation/y_train.csv
   y_test_path : artifacts/data_transformation/y_test.csv
   model_name : model.joblib
+
+
+model_evaluation:
+  root_dir : artifacts/model_evaluation
+  x_test_data_path : artifacts/data_transformation/test.csv
+  y_test_data_path : artifacts/data_transformation/y_test.csv
+  metric_file_name : artifacts/model_evaluation/metric.json
+  model_path : artifacts/model_trainer/model.joblib

@@ -1,7 +1,7 @@
 
 from Bone_marrow_survival_prediction.constants import *
 from Bone_marrow_survival_prediction.utils.comman import read_yaml, create_directories
-from Bone_marrow_survival_prediction.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig
+from Bone_marrow_survival_prediction.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig, ModelEvaluationConfig
 
 
 
@@ -85,3 +85,24 @@ class ConfigurationManager:
         )
         
         return model_trainer_config
+    
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        params = self.params.SupportVectorclassifier
+        schema = self.schema.TARGET_COLUMN
+        
+        create_directories([config.root_dir])
+        
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir = config.root_dir,
+            x_test_data_path = config.x_test_data_path,
+            y_test_data_path = config.y_test_data_path,
+            metric_file_name = config.metric_file_name,
+            model_path = config.model_path,
+            all_params = params,
+            target_column = schema,
+            mlflow_uri = "https://dagshub.com/rppawar491/Bone_marrow_surival_prediction.mlflow"
+            
+        )
+        
+        return model_evaluation_config    
