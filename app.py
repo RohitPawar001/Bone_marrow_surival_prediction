@@ -23,10 +23,10 @@ def index():
             PLTrecovery = int(request.form["PLTrecovery"])
             Donorage = float(request.form["Donorage"])
             Relapse = int(request.form["Relapse"])
-            IIIV = int(request.form["IIIV"])
+            IIIV = int(request.form["HLAmismatch"])
             
 
-            data = [survival_time,PLTrecovery,Donorage,Relapse,IIIV]
+            data = [survival_time,PLTrecovery,Donorage,Relapse,HLAmismatch]
             data = np.array(data).reshape(1, 5)
 
             obj = PredictionPipeline()
