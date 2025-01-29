@@ -160,11 +160,6 @@ The project implements a robust CI/CD pipeline using GitHub Actions:
 
 - Rohit Pawar
 
-## Demo
 
-<video width="560" height="315" controls>
-  <source src="https://github.com/RohitPawar001/Bone_marrow_surival_prediction/blob/main/VID-20250128-WA0000.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
 
 
